@@ -1,0 +1,25 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: chronograf-jmeter
+  labels:
+    app: chronograf-jmeter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chronograf-jmeter
+  template:
+    metadata:
+      labels:
+        app: chronograf-jmeter
+    spec:
+      containers:
+        - image: chronograf
+          name: chronograf
+          ports:
+            - containerPort: 8888
+              protocol: TCP
+              name: chronograf
+      nodeSelector:
+        type: storage-and-monitoring

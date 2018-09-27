@@ -1,0 +1,3 @@
+I update the Influx-Grafana cluster creating script to deploy seperate pods for Chronograf.
+
+I creaded seperate YAML file to deploy pods and services for Chronograf.
